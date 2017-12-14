@@ -8,7 +8,7 @@
 						proto 一个对象，作为新创建对象的原型。    
 						propertiesObject  可选     
 						var o1 = Object.create(null) //o1不继承任何属性与方法，创建没有原型的新对象     
-						var o1 = Object.create(Object.prototype) //创建新对象     
+						var o1 = Object.create(Object.prototype) //创建新对象  =  Object.create({})
 ### 属性访问错误
 + 如果obj找个对象没有name属性，那么访问obj.name就会报undefined，var len = obj.name.length很明显会抛出异常undefined没有length;                         建议写法 ： var len = obj && obj.name && obj.name.length
 ### 删除属性(delete)
