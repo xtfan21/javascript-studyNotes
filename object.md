@@ -4,15 +4,14 @@
 
 ## 对象的创建
 ```javascriptvar 
- + var obj ={}
- + var obj = new Object();
- + var obj = Object.create(proto,{propertiesObject})
+ 1、 var obj ={}
+ 2、 var obj = new Object();
+ 3、 var obj = Object.create(proto,{propertiesObject})
 						proto 一个对象，作为新创建对象的原型。    
 						propertiesObject  可选
     *  var o1 = Object.create(undefined) //报错
     *  var o1 = Object.create(null) //o1不继承任何属性与方法，创建没有原型的新对象
     *  var o1 = Object.create(Object.prototype) //创建新对象  =  Object.create({})
-    *  
     	obj5 = Object.create({a:444},{
 	foo: {
 	    configurable: false,   //是否能删除   默认false
