@@ -9,18 +9,20 @@
  1、 var obj ={}
  2、 var obj = new Object();
  3、 var obj = Object.create(proto,{propertiesObject})
-						proto 一个对象，作为新创建对象的原型。    
-						propertiesObject  可选
-      var o1 = Object.create(undefined) //报错
-      var o1 = Object.create(null) //o1不继承任何属性与方法，创建没有原型的新对象
-      var o1 = Object.create(Object.prototype) //创建新对象  =  Object.create({})
-    	obj5 = Object.create({a:444},{
+    参数说明:
+	proto 一个对象，作为新创建对象的原型。    
+	propertiesObject  可选
+						
+	var o1 = Object.create(undefined) //报错
+	var o1 = Object.create(null) //o1不继承任何属性与方法，创建没有原型的新对象
+	var o1 = Object.create(Object.prototype) //创建新对象  =  Object.create({})
+	var obj5 = Object.create({a:444},{
 	foo: {
 	    configurable: false,   //是否能删除   默认false
 	    writable: false,  //是否能修改属性值   默认false 不可修改
 	    value: 'hello'
 	}
-    	});
+	});
 	obj5.foo = 'me';
 	console.log(obj5.foo); //hello
 	console.log(obj5.__proto__); //{a:444}
@@ -33,6 +35,7 @@
 ### 删除属性(delete)
 1、用法：delete obj.name   <br/>
 2、delete只是断开属性和宿主对象的关系，而不会操作属性中的属性<br/>
+
 ```javascript
     var obj={"a":{'name':1}};
     var del=obj.a   //{'name':1}
