@@ -33,9 +33,9 @@
 1、用法：delete obj.name   <br/>
 2、delete只是断开属性和宿主对象的关系，而不会操作属性中的属性<br/>
 ```javascript
-    比如：var obj={"a":{'name':1}};
+    var obj={"a":{'name':1}};
     var del=obj.a   //{'name':1}
-    delete obj.a;<br/>
+    delete obj.a;
     console.log(del.name);  //1
 ```
 
