@@ -19,10 +19,10 @@
 	    writable: false,  //是否能修改属性值   默认false 不可修改
 	    value: 'hello'
 	}
-    });
-		obj5.foo = 'me';
-		console.log(obj5.foo); //hello
-		console.log(obj5.__proto__); //{a:444}
+    	});
+	obj5.foo = 'me';
+	console.log(obj5.foo); //hello
+	console.log(obj5.__proto__); //{a:444}
 ```
 
 ### 属性访问错误
