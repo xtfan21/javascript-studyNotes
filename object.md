@@ -10,7 +10,7 @@
  2、 var obj = new Object();
  3、 var obj = Object.create(proto,{propertiesObject})
         参数说明:
-	proto 一个对象，作为新创建对象的原型。    
+	proto 一个对象，作为新创建对象的原型。  如果参数不是null或者对象，将会抛出异常  
 	propertiesObject  可选
 						
 	var o1 = Object.create(undefined) //报错
