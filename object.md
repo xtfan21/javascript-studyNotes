@@ -30,12 +30,12 @@
 
 ### 属性访问错误
 
-+ 如果obj找个对象没有name属性，那么访问obj.name就会报undefined，var len = obj.name.length很明显会抛出异常undefined没有length;<br />
+> 如果obj找个对象没有name属性，那么访问obj.name就会报undefined，var len = obj.name.length很明显会抛出异常undefined没有length;<br />
   建议写法 ： var len = obj && obj.name && obj.name.length
 
 ### 删除属性(delete)
-1、用法：delete obj.name   <br/>
-2、delete只是断开属性和宿主对象的关系，而不会操作属性中的属性<br/>
+1、用法：delete obj.name   
+2、delete只是断开属性和宿主对象的关系，而不会操作属性中的属性
 
 ```javascript
     var obj={"a":{'name':1}};
