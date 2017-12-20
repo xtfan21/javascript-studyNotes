@@ -32,6 +32,7 @@
 
 + 如果obj找个对象没有name属性，那么访问obj.name就会报undefined，var len = obj.name.length很明显会抛出异常undefined没有length;<br />
   建议写法 ： var len = obj && obj.name && obj.name.length
+
 ### 删除属性(delete)
 1、用法：delete obj.name   <br/>
 2、delete只是断开属性和宿主对象的关系，而不会操作属性中的属性<br/>
@@ -41,5 +42,26 @@
     var del=obj.a   //{'name':1}
     delete obj.a;
     console.log(del.name);  //1
+```
+
+### 遍历属性
+1、for/in
+> 遍历可枚举的实例属性和继承属性
+```javascript
+    var po = {a:1,b:2};
+    var o2 = {c:3,d:4};
+    o2.__proto__ = po;
+    for(key in o2){
+        console.log(key);//c,d,a,b
+    }
+```
+2、Object.keys(obj)
+> 返回数组，包含可枚举的实例属性名称
+```javascript
+    var po = {a:1,b:2};
+    var o2 = {c:3,d:4};
+    o2.__proto__ = po;
+    var o3 = Object.keys(o2);
+    console.log(o3); //[c,d]
 ```
 
