@@ -1,0 +1,55 @@
+### 判断方法
+1、typeof
+>  我们能够使用typeof判断变量的身份，判断字符串得到string，数字和NaN得到number，函数会得到function等，但是判断数组，对象和null时都会得到object，详细请看js数据类型，这就是typeof的局限性，
+并不能准确的判断该变量的"真实身份"。那如何判断一个变量是数组还是对象？
+
+2、instanceof
+>   使用instanceof可以用来判断一个变量是数组还是对象，数组也是对象的一种，使用instanceof都会返回true
+```javascript
+            var arr = ['aa','bb','cc'];  
+            var obj = {  
+                a: 'aa',  
+                b: 'bb',  
+                c: 'cc'  
+            };  
+            console.log(arr instanceof Array);      //true  
+            console.log(arr instanceof Object);     //true  
+            console.log(obj instanceof Array);      //false  
+            console.log(obj instanceof Object);     //true  
+```
+* instanceof 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性，意思就是该变量通过原型链上能否找到构造函数的prototype 属性
+
+3、Object.prototype.toString.call()
+>  Object.prototype.toString.call()方法可以精准判断变量类型，它返回[object constructorName]的字符串格式
+```javascript
+        var a = NaN;  
+        var b= '222';  
+        var c = null;   
+        var d = false;  
+        var e = undefined; 
+        var arr = ['aa','bb','cc'];  
+        var obj = {  
+            'a': 'aa',  
+            'b': 'bb',  
+            'c': 'cc'  
+        };  
+        var res = Object.prototype.toString.call(arr);  
+        console.log(res);   //[object Array]  
+        var res2 = Object.prototype.toString.call(obj);  
+        console.log(res2);   //[object Object]  
+        var res3 = Object.prototype.toString.call(a);  
+        console.log(res3);   //[object Number]  
+        var res4 = Object.prototype.toString.call(b);  
+        console.log(res4);   //[object String]  
+        var res4 = Object.prototype.toString.call(c);  
+        console.log(res4);   //[object Null]  
+        var res5 = Object.prototype.toString.call(d);  
+        console.log(res5);   //[object Boolean]  
+        var res6 = Object.prototype.toString.call(e);  
+        console.log(res6);   //[object Undefined]  
+        
+  ```
+  ### 总结
+  判断简单的数据类型可以用typeof，
+  判断数组，对象使用instanceof，constructor和 Object.prototype.toString.call()，最好使用Object.prototype.toString.call()，更加精准
+        
