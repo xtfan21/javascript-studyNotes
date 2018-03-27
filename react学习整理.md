@@ -44,6 +44,8 @@ class Counter extends Component {
 
 卸载组件触发：
 * componentWillUnmount
+
+
 五、 state和props
 组件先根据自己的props渲染一次自己，props是不可变的，它们从父节点传递过来，被父节点拥有。
 为了实现交互，我们给组件引进了可变的state。this.state 是组件私有的，可以通过调用 this.setState() 来改变它，当状态改变时，组件重新渲染自己。
